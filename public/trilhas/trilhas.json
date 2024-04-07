@@ -1,0 +1,24 @@
+[
+    {
+      "nomeTrilha": "Trilha da Costa da Lagoa",
+      "cidade": "Florianópolis",
+      "estado": "SC",
+      "duracao": "120",
+      "trajeto": "4",
+      "dificuldade": "iniciante",
+      "tipo": "caminhada / trekking",
+      "nomeUsuario": "Carina",
+      "urlImagem": "https://images.pexels.com/photos/917510/pexels-photo-917510.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+  },
+  {
+    "nomeTrilha": "Trilha da Cachoeira do Poção",
+    "cidade": "Florianópolis",
+    "estado": "SC",
+    "duracao": "22",
+    "trajeto": "5",
+    "dificuldade": "moderada",
+    "tipo": "caminhada / trekking",
+    "nomeUsuario": "Carina",
+    "urlImagem": "https://images.pexels.com/photos/917510/pexels-photo-917510.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+}
+]
