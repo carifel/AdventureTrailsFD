@@ -1,6 +1,7 @@
 import CardTrilha from "./components/CardTrilha"
 import "./App.css"
 
+
 function App() {
 
   const listaTrilhas = [
@@ -28,6 +29,7 @@ function App() {
       
     </div>
   )
+ 
 }
 
 export default App

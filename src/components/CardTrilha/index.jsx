@@ -1,6 +1,7 @@
 import * as PropTypes from "prop-types"
 import "./style.css"
 
+
 function CardTrilha({dadosTrilha}){
     return(
         <div className="card_container">
@@ -8,7 +9,10 @@ function CardTrilha({dadosTrilha}){
             <h1>{dadosTrilha.nomeTrilha}</h1>
             <span>{dadosTrilha.cidade} / {dadosTrilha.estado}</span>
         </div>
+
+       
     )
+}
     //Configuração das PropTypes
     CardTrilha.propTypes = {
         dadosTrilha: PropTypes.exact({
@@ -23,6 +27,6 @@ function CardTrilha({dadosTrilha}){
             urlImagem: PropTypes.string.isRequired
         })
     }
-}
+
 
 export default CardTrilha;
