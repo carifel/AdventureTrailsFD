@@ -6,11 +6,16 @@ function CardTrilha({dadosTrilha}){
     return(
         <div className="card_container">
             <img className="card_imagem" width = {200} src={dadosTrilha.urlImagem} alt="imagem Trilha" />
-            <h1>{dadosTrilha.nomeTrilha}</h1>
-            <span>{dadosTrilha.cidade} / {dadosTrilha.estado}</span>
+            <div className="dados-trilha">
+                <h1>{dadosTrilha.nomeTrilha}</h1>
+                <p><b>Local: </b>{dadosTrilha.cidade} / {dadosTrilha.estado}</p>
+                <p><b>Duração:</b> {dadosTrilha.duracao} min</p>
+                <p><b>Trajeto: </b>{dadosTrilha.trajeto} Km</p>
+                <p><b>Dificuldade: </b>{dadosTrilha.dificuldade}</p>
+                <p><b>Tipo:</b> {dadosTrilha.tipo}</p>
+                <p><b>Criada por:</b> {dadosTrilha.nomeUsuario}</p>
+            </div>
         </div>
-
-       
     )
 }
     //Configuração das PropTypes
