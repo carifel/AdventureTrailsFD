@@ -5,8 +5,10 @@ function Trilhas() {
     const [listaTrilhas] = useFetch('/trilhas/trilhas.json');
     return(
         <div>
-            <img src="https://images.pexels.com/photos/6773749/pexels-photo-6773749.jpeg" alt="" width = "50%" height={300}/>
-          <h1>Explore Trilhas Incríveis</h1>
+             <img src="https://images.pexels.com/photos/6773749/pexels-photo-6773749.jpeg" alt=""  width="100%" height={400} />
+            
+             <h1>Explore Trilhas Incríveis</h1>
+           
           {
             listaTrilhas && listaTrilhas.map((trilha, index) => (
             <CardTrilha dadosTrilha={trilha} key={index}/>
