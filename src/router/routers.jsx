@@ -1,4 +1,5 @@
 import {createBrowserRouter} from "react-router-dom"
+import App from "../App.jsx"
 
 
 //importação das páginas
@@ -7,20 +8,25 @@ import Cadastro from "../pages/Cadastro.jsx"
 import ListaTrilhas from "../pages/ListaTrilhas.jsx"
 
 const routers = createBrowserRouter([
-    
     {
-        path: "/",
-        element: <Home/>,
-    },
-    {
-        path: "/cadastro",
-        element: <Cadastro/>,
-    },
-    {
-        path: "/listaTrilhas",
-        element: <ListaTrilhas/>,
-    },
-        
+        path:"/",
+        element: <App/>,
+        errorElement: <div>Página não encontrada</div>,
+        children: [
+            {
+                path: "/",
+                element: <Home/>,
+            },
+            {
+                path: "/cadastro",
+                element: <Cadastro/>,
+            },
+            {
+                path: "/listaTrilhas",
+                element: <ListaTrilhas/>,
+            },
+        ]
+    }   
 ])
 
 export default routers;

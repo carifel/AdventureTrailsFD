@@ -1,20 +1,16 @@
-import './index.css'
+import styles from "./style.module.css"
+import{Link} from "react-router-dom"
+
 function Header(){
 
     return(
-    <div className="header-menu">
-        <nav>
-            <ul className="lista-menu">
-                <li>Adventure Trails</li>
-                <div className="right-corner">
-                    <li>Explorar Trilhas</li>
-                    <li>Cadastrar Trilhas</li>
-                </div>
-                
-            </ul>
+    <header className={styles.header}>
+        <Link to="/" className={styles.link}><h4>Adventure Trails FD</h4></Link>
+        <nav className={styles.nav}>
+            <Link to="/listaTrilhas" className={styles.link}>Explorar Trilhas</Link>
+            <Link to="/cadastro" className={styles.link}>Cadastrar Trilhas</Link>
         </nav>
-        
-    </div>
-    )
+    </header>
+    );
 }
 export default Header;

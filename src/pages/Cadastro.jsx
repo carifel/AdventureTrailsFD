@@ -1,7 +1,7 @@
 function Cadastro(){
     return(
-        <div>
-            <h1>Página de Cadastro</h1>
+        <div className="container">
+            <h1 className="titulo">Página de Cadastro</h1>
         </div>
     )
 }
