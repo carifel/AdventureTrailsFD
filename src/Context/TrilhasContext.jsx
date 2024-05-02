@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { createContext, useState, useEffect } from "react";
 import useFetch from "../hooks/useFetch";
 
@@ -11,10 +12,14 @@ export const TrilhasContextProvider = ({children}) => {
         if(!!dados && !isLoading) {
             setTrilhas(dados.trilhas);
         }
-    }, [dados, isLoading]);
+    }, [dados]);
+
+    function addTrail(trailData){
+        setTrilhas(t => [...t, trailData])
+    }
 
     return(
-        <TrilhasContext.Provider value={{trilhas, setTrilhas, isLoading}}>
+        <TrilhasContext.Provider value={{trilhas, setTrilhas, isLoading, addTrail}}>
             {children}
         </TrilhasContext.Provider>
     )

@@ -25,7 +25,7 @@ function CardTrilha({dadosTrilha}){
             duracao: PropTypes.number.isRequired,
             trajeto: PropTypes.number.isRequired,
             dificuldade: PropTypes.string.isRequired,
-            tipo: PropTypes.oneOf(['caminhada / trekking', 'ciclismo']),
+            tipo: PropTypes.oneOf(["caminhada / trekking', 'ciclismo"]),
             nomeUsuario: PropTypes.string.isRequired,
             urlImagem: PropTypes.string.isRequired
         })

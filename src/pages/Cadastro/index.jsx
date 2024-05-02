@@ -1,20 +1,35 @@
 import {FormComponent, InputWrapper,PageTitle,ButtonsWrapper,PageContainer} from "./styles";
 import {useForm} from "react-hook-form";
-
+import{useContext} from "react";
+import {TrilhasContext} from "../../Context/TrilhasContext";
+import {useNavigate} from "react-router-dom";
 
 
 function Cadastro(){
-  const {register} = useForm();
+  const {register, handleSubmit} = useForm();
+  const {addTrail} = useContext(TrilhasContext);
+  const navigate = useNavigate();
+
+  function sendForm(formValue){
+    console.log(formValue)
+
+    addTrail({
+        ...formValue, 
+        duracao: Number(formValue.duracao),
+        trajeto: Number(formValue.trajeto)});
+
+    navigate("/ListaTrilhas");
+  }
 
     return(
         <PageContainer>
             <PageTitle>Cadastro de nova trilha</PageTitle>
 
-            <FormComponent>
+            <FormComponent onSubmit={handleSubmit(sendForm)}>
                 <InputWrapper>
-                    <label htmlFor="nome">Nome da trilha</label>
+                    <label htmlFor="nomeTrilha">Nome da trilha</label>
                     <input type="text" 
-                    {...register("nome", {
+                    {...register("nomeTrilha", {
                         required: "Campo obrigatório",
                         maxLenght:{
                             value: 100, 
@@ -23,9 +38,9 @@ function Cadastro(){
                     })}/>
                 </InputWrapper>
                 <InputWrapper>
-                    <label htmlFor="duracao-estimada">Duração estimada (em minutos)</label>
+                    <label htmlFor="duracao">Duração estimada (em minutos)</label>
                     <input type="number" 
-                    {...register("duracao-estimada", {
+                    {...register("duracao", {
                         required: "Campo obrigatório"
                     }
                     )}/>
@@ -61,18 +76,8 @@ function Cadastro(){
                         })}/>
                 </InputWrapper>
                 <InputWrapper>
-                    <label htmlFor="cidade">Cidade</label>
-                    <input type="text" {...register("cidade", {
-                         required: "Campo obrigatório",
-                         maxLenght: {
-                            value: 2, 
-                            message: "Este campo aceita no máximo 2 caracteres"
-                        }
-                        })}/>
-                </InputWrapper>
-                <InputWrapper>
-                    <label htmlFor="nome-usuario">Nome completo do usuário</label>
-                    <input type="text" {...register("nome-usuario", {
+                    <label htmlFor="nomeUsuario">Nome completo do usuário</label>
+                    <input type="text" {...register("nomeUsuario", {
                          required: "Campo obrigatório",
                          maxLenght: {
                             value: 60, 
@@ -100,13 +105,13 @@ function Cadastro(){
                     }
                 )}>
                         <option value="">Selecione uma opção</option>
-                        <option value="caminhada /trekking">Caminhada / Trekking</option>
+                        <option value="caminhada / trekking">Caminhada / Trekking</option>
                         <option value="ciclismo">Ciclismo</option>
                     </select>
                 </InputWrapper>
                 <InputWrapper>
-                    <label htmlFor="imagem-trilha">URL imagem da trilha</label>
-                    <input type="text" {...register("imagem-trilha", {
+                    <label htmlFor="urlImagem">URL imagem da trilha</label>
+                    <input type="text" {...register("urlImagem", {
                          maxLenght: {
                             value: 300, 
                             message: "Este campo aceita no máximo 300 caracteres"
@@ -115,7 +120,7 @@ function Cadastro(){
                 )}/>
                 </InputWrapper>
                 <ButtonsWrapper>
-                <button type="button">Cadastrar</button>
+                <button type="submit">Cadastrar</button>
                 <button type="button">Voltar para a home</button>
 
                 </ButtonsWrapper>
