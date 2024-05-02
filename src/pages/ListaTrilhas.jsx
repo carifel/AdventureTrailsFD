@@ -9,7 +9,7 @@ function ListaTrilhas(){
   
     return (
         <div className="container">
-            <h1 className="titulo">Explore trilhas incríveis</h1>
+            <h1>Explore trilhas incríveis</h1>
             {Array.isArray(trilhas) && !isLoading ? (
             trilhas.map((trilha, index) => (
                 <CardTrilha dadosTrilha={trilha} key={index} />

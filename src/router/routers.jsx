@@ -4,7 +4,7 @@ import App from "../App.jsx"
 
 //importação das páginas
 import Home from "../pages/Home.jsx"
-import Cadastro from "../pages/Cadastro.jsx"
+import Cadastro from "../pages/Cadastro"
 import ListaTrilhas from "../pages/ListaTrilhas.jsx"
 
 const routers = createBrowserRouter([
