@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 function useFetch(url) {
  const [data, setData] = useState(null);
- const [isloading, setIsLoading] = useState(false);
+ const [isLoading, setIsLoading] = useState(false);
 
  useEffect(() => {
   setIsLoading(true);
@@ -14,7 +14,7 @@ function useFetch(url) {
    });
  }, [url]);
 
- return [data, isloading];
+ return [data, isLoading];
 }
 
 export default useFetch;

@@ -1,22 +1,19 @@
 import "./App.css"
-import Trilhas from './Trilhas'
 import Header from './components/Header'
 import {Outlet} from "react-router-dom"
+import { TrilhasContextProvider } from "./Context/TrilhasContext"
 
 
 function App() {
-
- 
   return (
-    
-    <>
-    <Header/>
-    <Outlet/>
-     <Trilhas/>
-    </>
-
-  )
+  
+    <TrilhasContextProvider>
+      <Header/>
+      <Outlet/>
+    </TrilhasContextProvider>
+   
+  );
  
 }
 
-export default App
+export default App;

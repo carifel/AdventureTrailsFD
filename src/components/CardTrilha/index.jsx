@@ -11,7 +11,7 @@ function CardTrilha({dadosTrilha}){
                 <p><b>Duração:</b> {dadosTrilha.duracao} min</p>
                 <p><b>Trajeto: </b>{dadosTrilha.trajeto} Km</p>
                 <p><b>Dificuldade: </b>{dadosTrilha.dificuldade}</p>
-                <p><b>Tipo:</b> {dadosTrilha.tipo}</p>
+                <p><b>Tipo:</b> {dadosTrilha.tipo}</p><br/>
                 <p><b>Criada por:</b> {dadosTrilha.nomeUsuario}</p>
         </div>
     )
