@@ -3,29 +3,39 @@ import {useForm} from "react-hook-form";
 import{useContext} from "react";
 import {TrilhasContext} from "../../Context/TrilhasContext";
 import {useNavigate} from "react-router-dom";
+import { Button } from "@mui/material";
 
 
 function Cadastro(){
-  const {register, handleSubmit, formState: {errors}} = useForm();
+  const {
+    register, 
+    handleSubmit, 
+    formState: {errors}
+} = useForm();
   const {addTrail} = useContext(TrilhasContext);
   const navigate = useNavigate();
 
   function sendForm(formValue){
-    console.log(formValue)
+    console.log(formValue);
 
     addTrail({
         ...formValue, 
         duracao: Number(formValue.duracao),
-        trajeto: Number(formValue.trajeto)});
+        trajeto: Number(formValue.trajeto)
+    });
 
     navigate("/ListaTrilhas");
   }
+    function goToHome(){
+        navigate("/");
+    }
+  
 
     return(
         <PageContainer>
             <PageTitle>Cadastro de nova trilha</PageTitle>
 
-            <FormComponent onSubmit={handleSubmit(sendForm)}>
+            <FormComponent>
                 <InputWrapper>
                     <label htmlFor="nomeTrilha">Nome da trilha</label>
                     <input type="text" 
@@ -129,8 +139,10 @@ function Cadastro(){
                     {errors?.urlImagem && <p>{errors.urlImagem?.message}</p>}
                 </InputWrapper>
                 <ButtonsWrapper>
-                <button type="submit">Cadastrar</button>
-                <button type="button">Voltar para a home</button>
+                <Button variant="contained" type="button" onClick= {handleSubmit(sendForm)}>
+                    Cadastrar
+                    </Button>
+                <Button variant="outlined"type="button" onClick={() => goToHome()}>Voltar para a home</Button>
 
                 </ButtonsWrapper>
             </FormComponent>

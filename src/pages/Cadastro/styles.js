@@ -17,12 +17,12 @@ export const PageTitle = styled("h1")({
 export const FormComponent = styled("form")({
     display: "flex",
     flexDirection: "column",
-    gap: "1rem"
+    gap: "1rem",
+    minWidth: "50vw"
 });
 export const InputWrapper = styled("div")({
     display: "flex",
     flexDirection: "column"
-  
 });
 export const ButtonsWrapper = styled("div")({
     display: "flex",
