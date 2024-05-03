@@ -6,7 +6,7 @@ import {useNavigate} from "react-router-dom";
 
 
 function Cadastro(){
-  const {register, handleSubmit} = useForm();
+  const {register, handleSubmit, formState: {errors}} = useForm();
   const {addTrail} = useContext(TrilhasContext);
   const navigate = useNavigate();
 
@@ -36,6 +36,7 @@ function Cadastro(){
                             message: "Este campo aceita no máximo 100 caracteres"
                         }
                     })}/>
+                    {errors?.nomeTrilha && <p>{errors.nomeTrilha?.message}</p>}
                 </InputWrapper>
                 <InputWrapper>
                     <label htmlFor="duracao">Duração estimada (em minutos)</label>
@@ -44,6 +45,7 @@ function Cadastro(){
                         required: "Campo obrigatório"
                     }
                     )}/>
+                    {errors?.duracao && <p>{errors.duracao?.message}</p>}
                 </InputWrapper>
                 <InputWrapper>
                     <label htmlFor="trajeto">Trajeto (Km)</label>
@@ -52,6 +54,7 @@ function Cadastro(){
                          required: "Campo obrigatório"
                     }
                 )}/>
+                    {errors?.trajeto && <p>{errors.trajeto?.message}</p>}
                 </InputWrapper>
                 <InputWrapper>
                     <label htmlFor="cidade">Cidade</label>
@@ -64,6 +67,7 @@ function Cadastro(){
                         }
                      }
                     )}/>
+                    {errors?.cidade && <p>{errors.cidade?.message}</p>}
                 </InputWrapper>
                 <InputWrapper>
                     <label htmlFor="estado">Estado</label>
@@ -73,7 +77,8 @@ function Cadastro(){
                             value: 2, 
                             message: "Este campo aceita no máximo 2 caracteres"
                         }
-                        })}/>
+                        })}/>                    
+                        {errors?.estado && <p>{errors.estado?.message}</p>}
                 </InputWrapper>
                 <InputWrapper>
                     <label htmlFor="nomeUsuario">Nome completo do usuário</label>
@@ -85,6 +90,7 @@ function Cadastro(){
                         }
                         }
                         )}/>
+                    {errors?.nomeUsuario && <p>{errors.nomeUsuario?.message}</p>}
                 </InputWrapper>
                 <InputWrapper>
                     <label htmlFor="dificuldade">Dificuldade</label>
@@ -97,6 +103,7 @@ function Cadastro(){
                         <option value="Intermediário">Intermediário</option>
                         <option value="Difícil">Difícil</option>
                     </select>
+                    {errors?.dificuldade && <p>{errors.dificuldade?.message}</p>}
                 </InputWrapper>
                 <InputWrapper>
                     <label htmlFor="tipo">Tipo de trilha</label>
@@ -108,6 +115,7 @@ function Cadastro(){
                         <option value="caminhada / trekking">Caminhada / Trekking</option>
                         <option value="ciclismo">Ciclismo</option>
                     </select>
+                    {errors?.tipo && <p>{errors.tipo?.message}</p>}
                 </InputWrapper>
                 <InputWrapper>
                     <label htmlFor="urlImagem">URL imagem da trilha</label>
@@ -118,6 +126,7 @@ function Cadastro(){
                         }
                     }
                 )}/>
+                    {errors?.urlImagem && <p>{errors.urlImagem?.message}</p>}
                 </InputWrapper>
                 <ButtonsWrapper>
                 <button type="submit">Cadastrar</button>
